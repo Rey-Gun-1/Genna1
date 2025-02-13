@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genna's Gems</title>
+  <!-- Google Fonts for a romantic vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #6A0DAD; /* royal purple */
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      margin: 20px;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    p, div {
+      font-size: 1.5em;
+      margin-bottom: 1.5em;
+      line-height: 1.4;
+    }
+    button {
+      background-color: #ff6f91;
+      color: white;
+      border: none;
+      padding: 0.8em 1.2em;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff3f7f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Genna's Gems</h1>
+    <div id="message">
+      <span>Welkom Genna, Happy Valentine's Day.</span>
+    </div>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    // Steps array with messages and full verse contents (using the KJV)
+    const steps = [
+      `<span>Welkom Genna, Happy Valentine's Day.</span>`,
+      `<span>Jy is 'n ongelooflike goeie mens en 'n even beter vriendin. Ek gee nie om wat ander mense van jou sê of dink nie en jy moet ook nie dat dit jou pla nie.</span>`,
+      `<span>Be yourself and love yourself.</span>`,
+      `<div>
+         <strong>Psalm 46:5</strong><br>
+         God is in the midst of her; she shall not be moved: God shall help her, and that right early.
+       </div>`,
+      `<div>
+         <strong>Matthew 18:3-5</strong><br>
+         And said, Verily I say unto you, Except ye be converted, and become as little children, ye shall not enter into the kingdom of heaven.<br>
+         Whosoever therefore shall humble himself as this little child, the same is greatest in the kingdom of heaven.<br>
+         And whoso shall receive one such little child in my name receiveth me.
+       </div>`,
+      `<div>
+         <strong>Nehemiah 8:10</strong><br>
+         Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our Lord: neither be ye sorry; for the joy of the LORD is your strength.
+       </div>`,
+      `<span>Keep shining like the gem you are! Happy Valentine's Day!</span>`
+    ];
+
+    let currentStep = 0;
+    const messageEl = document.getElementById('message');
+    const nextBtn = document.getElementById('nextBtn');
+
+    nextBtn.addEventListener('click', () => {
+      currentStep++;
+      if (currentStep < steps.length) {
+        messageEl.innerHTML = steps[currentStep];
+      } else {
+        messageEl.innerHTML = `<span>Dis al... vir nou – geniet jou dag Genna :)</span>`;
+        nextBtn.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
